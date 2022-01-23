@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign in - Brand</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><strong>Brand</strong></li>
+      </ul>
+      <ul>
+        <li><a href="/index.html">Create an account</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <hgroup>
+        <h1>Welcome Back</h1>
+        <h2>Sign in to Brand or <a href="/index.html">create an account</a>.</h2>
+      </hgroup>
+      <form action="#">
+        <label for="email">
+          Email Address
+          <input type="email" id="email" placeholder="Email" required>
+        </label>
+        <label for="password">
+          Password
+          <input type="password" id="password" placeholder="Password" required>
+        </label>
+        <fieldset>
+          <label for="remember">
+            <input type="checkbox" role="switch" id="remember">
+            Remember me
+          </label>
+        </fieldset>
+        <button type="submit">Sign in</button>
+      </form>
+    </main>
+    <footer class="container">
+      <p>
+        <small>© 2022 Brand.</small>
+      </p>
+    </footer>
+  </body>
+</html>

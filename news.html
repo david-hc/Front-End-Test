@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News List</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  </head>
+  <body>
+    <main class="container">
+      <hgroup>
+        <h1>News List</h1>
+        <h2>Based on New York Times' RSS Feed</h2>
+      </hgroup>
+      <ul class="news-list"></ul>
+    </main>
+    <script src="rss-parser.min.js"></script>
+    <script>
+      let parser = new RSSParser();
+      parser.parseURL('https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml', function(err, feed) {
+        if (err) throw err;
+        for (let i = 0; i < 10; i++) {
+          const entry = feed.items[i];
+          printPost(entry);
+        }
+      });
+
+      function printPost(entry) {
+        article = document.createElement("li");
+        article.innerHTML = "<a href='" + entry.link +"' target='_blank'>" + entry.title + "</a>"
+        document.querySelector(".news-list").appendChild(article);
+      }
+    </script>
+  </body>
+</html>
